@@ -47,7 +47,7 @@ export default function Dashboard() {
   };
 
   const copy = (formId) => {
-    navigator.clipboard.writeText(`/forms/${formId}/fill`).then(() => {});
+    navigator.clipboard.writeText(`https://form-be-oao2.onrender.com/forms/${formId}/fill`).then(() => {});
   };
 
   return (
