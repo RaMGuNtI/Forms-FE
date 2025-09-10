@@ -73,7 +73,7 @@ export default function Dashboard() {
           </p>
         )}
 
-        {forms.map((f) => (
+        {forms.map((f,idx) => (
           <div key={f._id} className="form-card">
             <div className="form-info">
               <h3>{f.title}</h3>
@@ -85,12 +85,14 @@ export default function Dashboard() {
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-success btn-sm"
+                data-testid={'open-'+idx}
               >
                 Open
               </a>
               <Link
                 to={`/responses/${f.formId}`}
                 className="btn btn-info btn-sm"
+                data-testid={'responses-'+idx}
               >
                 Responses
               </Link>
@@ -102,6 +104,7 @@ export default function Dashboard() {
                 showMessage('URL copied to ClipBoard');
               }}
               className=""
+                data-testid={'copy-'+idx}
             >
               Copy Form URL
             </button>
